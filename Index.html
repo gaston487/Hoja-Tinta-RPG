@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoja de Personaje - Sistema de Tinta</title>
+    <style>
+        body {
+            background-color: #e0d8c3; /* Color papel antiguo */
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .sheet {
+            background: white;
+            width: 850px;
+            padding: 30px;
+            border: 2px solid #000;
+            box-shadow: 10px 10px 0px #000;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .circle-container {
+            text-align: center;
+            border: 3px double #000;
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .section {
+            border: 1px solid #000;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        label { font-weight: bold; display: block; margin-top: 5px; }
+        input[type="text"], textarea {
+            width: 95%;
+            border: none;
+            border-bottom: 1px solid #000;
+            background: transparent;
+            font-family: inherit;
+        }
+        textarea { height: 80px; resize: none; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        @media print {
+            body { background: white; }
+            .sheet { box-shadow: none; border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sheet">
+    <div class="header">
+        <div class="circle-container">
+            <strong>ESPÍRITU</strong> [cite: 1]
+            <input type="file" style="width: 80px; font-size: 10px;">
+        </div>
+        <div style="text-align: center;">
+            <label>KARMA</label> [cite: 7]
+            <input type="text" style="width: 50px; text-align: center; font-size: 24px;">
+        </div>
+        <div class="circle-container" style="border-style: dotted;">
+            <strong>SOMBRA</strong> [cite: 8]
+            <input type="file" style="width: 80px; font-size: 10px;">
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div>
+            <div class="section">
+                <label>NOMBRE:</label> [cite: 5]
+                <input type="text">
+                <label>CARGA:</label> [cite: 4]
+                <input type="text">
+                <label>HABILIDADES:</label> [cite: 10]
+                <textarea></textarea>
+                <label>EQUIPO:</label> [cite: 11]
+                <textarea></textarea>
+            </div>
+        </div>
+
+        <div>
+            <div class="section">
+                <label>NOMBRE (SOMBRA):</label> [cite: 17]
+                <input type="text">
+                <label>FORMA / DESCRIPCIÓN:</label> [cite: 18]
+                <textarea></textarea>
+                <div class="stats-grid">
+                    <div>
+                        <label>RESIS. BÁSICA:</label> [cite: 19]
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>RESIS. MÁXIMA:</label> [cite: 19]
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>DEFENSA BÁSICA:</label> [cite: 20]
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>DAÑO BÁSICO:</label> [cite: 20]
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <label>ESTADO:</label> [cite: 13]
+        <div class="checkbox-group">
+            <label><input type="checkbox"> QUEMADURA</label> [cite: 12, 13]
+            <label><input type="checkbox"> ESCALoFRÍO</label> [cite: 9, 13]
+            <label><input type="checkbox"> ENVENENAMIENTO</label> [cite: 9]
+            <label><input type="checkbox"> TERROR</label> [cite: 9]
+            <label><input type="checkbox"> FLAQUEZA</label> [cite: 9]
+        </div>
+        <label>ÚLTIMA ALMENARA:</label> [cite: 14]
+        <input type="text">
+        <label>ELIXIRES:</label> [cite: 14]
+        <input type="text">
+        <div class="stats-grid">
+            <div><label>ESQUIRLAS:</label> [cite: 15] <input type="text"></div>
+            <div><label>MONEDAS:</label> [cite: 16] <input type="text"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <label>NOTAS Y EVOLUCIÓN:</label> [cite: 22, 23]
+        <textarea style="height: 150px;"></textarea>
+    </div>
+</div>
+
+</body>
+</html>
